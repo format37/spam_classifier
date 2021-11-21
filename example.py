@@ -17,6 +17,6 @@ def is_spam(name):
     model.load_model('catboost_spam.model')
     validation = data_augmentation(pd.DataFrame([name], columns = ['name']))
     pred = model.predict(validation)
-    return pred[0]
+    return pred[0] # numpy.int64 0 or 1
 
 print(is_spam('💝💝💝 Г0РЯЧИЕ_ZНAK0МСТBA_TГ 💝💝💝'))
